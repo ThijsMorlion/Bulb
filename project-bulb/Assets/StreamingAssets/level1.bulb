@@ -1,0 +1,388 @@
+{
+	"Grid": {
+		"NumberOfColumns": 5,
+		"NumberOfRows": 5,
+		"CellSize": 65.0
+	},
+	"Batteries": [{
+			"Params": {
+				"Voltage": 4
+			},
+			"State": 1,
+			"Type": 2,
+			"PositionOnGrid": {
+				"x": 2.0,
+				"y": 4.0
+			},
+			"GridCellPositions": [{
+					"x": 2.0,
+					"y": 4.0
+				}, {
+					"x": 3.0,
+					"y": 4.0
+				}
+			],
+			"Rotation": 0.0
+		}
+	],
+	"LightBulbs": [{
+			"Params": {
+				"IsOn": false,
+				"Intensity": 0.0
+			},
+			"InSocket": false,
+			"State": 1,
+			"Type": 1,
+			"PositionOnGrid": {
+				"x": 2.0,
+				"y": 0.0
+			},
+			"GridCellPositions": [{
+					"x": 2.0,
+					"y": 0.0
+				}
+			],
+			"Rotation": 0.0
+		}
+	],
+	"WirePieces": [{
+			"Type": 0,
+			"DirectionFlag": 3,
+			"Connections": {
+				"Right": {
+					"x": 2.0,
+					"y": 0.0
+				},
+				"Left": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			},
+			"DrawableData": {
+				"Type": 6,
+				"PositionOnGrid": {
+					"x": 1.0,
+					"y": 0.0
+				},
+				"GridCellPositions": [{
+						"x": 1.0,
+						"y": 0.0
+					}
+				],
+				"Rotation": 90.0
+			}
+		}, {
+			"Type": 0,
+			"DirectionFlag": 3,
+			"Connections": {
+				"Left": {
+					"x": 2.0,
+					"y": 0.0
+				},
+				"Right": {
+					"x": 4.0,
+					"y": 0.0
+				}
+			},
+			"DrawableData": {
+				"Type": 6,
+				"PositionOnGrid": {
+					"x": 3.0,
+					"y": 0.0
+				},
+				"GridCellPositions": [{
+						"x": 3.0,
+						"y": 0.0
+					}
+				],
+				"Rotation": 90.0
+			}
+		}, {
+			"Type": 2,
+			"DirectionFlag": 9,
+			"Connections": {
+				"Left": {
+					"x": 3.0,
+					"y": 0.0
+				},
+				"Bottom": {
+					"x": 4.0,
+					"y": 1.0
+				}
+			},
+			"DrawableData": {
+				"Type": 6,
+				"PositionOnGrid": {
+					"x": 4.0,
+					"y": 0.0
+				},
+				"GridCellPositions": [{
+						"x": 4.0,
+						"y": 0.0
+					}
+				],
+				"Rotation": 270.0
+			}
+		}, {
+			"Type": 1,
+			"DirectionFlag": 12,
+			"Connections": {
+				"Top": {
+					"x": 4.0,
+					"y": 0.0
+				},
+				"Bottom": {
+					"x": 4.0,
+					"y": 2.0
+				}
+			},
+			"DrawableData": {
+				"Type": 6,
+				"PositionOnGrid": {
+					"x": 4.0,
+					"y": 1.0
+				},
+				"GridCellPositions": [{
+						"x": 4.0,
+						"y": 1.0
+					}
+				],
+				"Rotation": 0.0
+			}
+		}, {
+			"Type": 1,
+			"DirectionFlag": 12,
+			"Connections": {
+				"Top": {
+					"x": 4.0,
+					"y": 1.0
+				},
+				"Bottom": {
+					"x": 4.0,
+					"y": 3.0
+				}
+			},
+			"DrawableData": {
+				"Type": 6,
+				"PositionOnGrid": {
+					"x": 4.0,
+					"y": 2.0
+				},
+				"GridCellPositions": [{
+						"x": 4.0,
+						"y": 2.0
+					}
+				],
+				"Rotation": 0.0
+			}
+		}, {
+			"Type": 1,
+			"DirectionFlag": 12,
+			"Connections": {
+				"Top": {
+					"x": 4.0,
+					"y": 2.0
+				},
+				"Bottom": {
+					"x": 4.0,
+					"y": 4.0
+				}
+			},
+			"DrawableData": {
+				"Type": 6,
+				"PositionOnGrid": {
+					"x": 4.0,
+					"y": 3.0
+				},
+				"GridCellPositions": [{
+						"x": 4.0,
+						"y": 3.0
+					}
+				],
+				"Rotation": 0.0
+			}
+		}, {
+			"Type": 4,
+			"DirectionFlag": 5,
+			"Connections": {
+				"Top": {
+					"x": 4.0,
+					"y": 3.0
+				},
+				"Left": {
+					"x": 2.0,
+					"y": 4.0
+				}
+			},
+			"DrawableData": {
+				"Type": 6,
+				"PositionOnGrid": {
+					"x": 4.0,
+					"y": 4.0
+				},
+				"GridCellPositions": [{
+						"x": 4.0,
+						"y": 4.0
+					}
+				],
+				"Rotation": 180.0
+			}
+		}, {
+			"Type": 0,
+			"DirectionFlag": 3,
+			"Connections": {
+				"Right": {
+					"x": 2.0,
+					"y": 4.0
+				},
+				"Left": {
+					"x": 0.0,
+					"y": 4.0
+				}
+			},
+			"DrawableData": {
+				"Type": 6,
+				"PositionOnGrid": {
+					"x": 1.0,
+					"y": 4.0
+				},
+				"GridCellPositions": [{
+						"x": 1.0,
+						"y": 4.0
+					}
+				],
+				"Rotation": 90.0
+			}
+		}, {
+			"Type": 5,
+			"DirectionFlag": 6,
+			"Connections": {
+				"Right": {
+					"x": 1.0,
+					"y": 4.0
+				},
+				"Top": {
+					"x": 0.0,
+					"y": 3.0
+				}
+			},
+			"DrawableData": {
+				"Type": 6,
+				"PositionOnGrid": {
+					"x": 0.0,
+					"y": 4.0
+				},
+				"GridCellPositions": [{
+						"x": 0.0,
+						"y": 4.0
+					}
+				],
+				"Rotation": 90.0
+			}
+		}, {
+			"Type": 3,
+			"DirectionFlag": 10,
+			"Connections": {
+				"Bottom": {
+					"x": 0.0,
+					"y": 1.0
+				},
+				"Right": {
+					"x": 1.0,
+					"y": 0.0
+				}
+			},
+			"DrawableData": {
+				"Type": 6,
+				"PositionOnGrid": {
+					"x": 0.0,
+					"y": 0.0
+				},
+				"GridCellPositions": [{
+						"x": 0.0,
+						"y": 0.0
+					}
+				],
+				"Rotation": 0.0
+			}
+		}, {
+			"Type": 1,
+			"DirectionFlag": 12,
+			"Connections": {
+				"Top": {
+					"x": 0.0,
+					"y": 0.0
+				},
+				"Bottom": {
+					"x": 0.0,
+					"y": 2.0
+				}
+			},
+			"DrawableData": {
+				"Type": 6,
+				"PositionOnGrid": {
+					"x": 0.0,
+					"y": 1.0
+				},
+				"GridCellPositions": [{
+						"x": 0.0,
+						"y": 1.0
+					}
+				],
+				"Rotation": 0.0
+			}
+		}, {
+			"Type": 1,
+			"DirectionFlag": 12,
+			"Connections": {
+				"Top": {
+					"x": 0.0,
+					"y": 1.0
+				},
+				"Bottom": {
+					"x": 0.0,
+					"y": 3.0
+				}
+			},
+			"DrawableData": {
+				"Type": 6,
+				"PositionOnGrid": {
+					"x": 0.0,
+					"y": 2.0
+				},
+				"GridCellPositions": [{
+						"x": 0.0,
+						"y": 2.0
+					}
+				],
+				"Rotation": 0.0
+			}
+		}, {
+			"Type": 1,
+			"DirectionFlag": 12,
+			"Connections": {
+				"Top": {
+					"x": 0.0,
+					"y": 2.0
+				},
+				"Bottom": {
+					"x": 0.0,
+					"y": 4.0
+				}
+			},
+			"DrawableData": {
+				"Type": 6,
+				"PositionOnGrid": {
+					"x": 0.0,
+					"y": 3.0
+				},
+				"GridCellPositions": [{
+						"x": 0.0,
+						"y": 3.0
+					}
+				],
+				"Rotation": 0.0
+			}
+		}
+	]
+}

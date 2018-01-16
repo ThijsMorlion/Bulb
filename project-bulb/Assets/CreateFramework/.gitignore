@@ -1,0 +1,39 @@
+# =============== #
+# Unity generated #
+# =============== #
+Temp/
+Library/
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+ExportedObj/
+obj/
+*.svd
+*.userprefs
+/*.csproj
+*.pidb
+*.suo
+/*.sln
+*.user
+*.unityproj
+*.booproj
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Assets/TextMesh Pro/Examples/
+Assets/StreamingAssets/XML/Settings/SavedSettings.xml
+Scripts/Create/UI/Tweenerts/BaseTweenertOnPageState.cs.meta
+Scripts/Create/UI/Tweenerts/Editor/BaseTweenertOnPageStateEditor.cs.meta
+Textures/circle.psd.meta
+Scripts/Create/UI/Tweenerts/TweenertGroup.cs.meta
+Scripts/Create/UI/Tweenerts/Editor/TweenertEditor.cs.meta
+Scripts/Create/UI/Tweenerts/Editor/TweenertGroupEditor.cs.meta

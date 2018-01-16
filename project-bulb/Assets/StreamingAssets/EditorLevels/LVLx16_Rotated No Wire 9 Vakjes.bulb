@@ -1,0 +1,65 @@
+{
+	"LevelDataVersionNumber": 4,
+	"GoalDescription": "",
+	"MaxWireAvailable": 9,
+	"Max4VBatteries": 0,
+	"Max9VBatteries": 0,
+	"MaxBulbs": 0,
+	"MaxMotors": 0,
+	"MaxBuzzers": 0,
+	"MaxSwitches": 0,
+	"CanBridge": false,
+	"CanSnap": false,
+	"CanBranch": false,
+	"Grid": {
+		"NumberOfColumns": 10,
+		"NumberOfRows": 10,
+		"CellSize": 95.9812
+	},
+	"Batteries": [{
+			"Params": {
+				"Voltage": 4
+			},
+			"State": 1,
+			"Type": 2,
+			"PositionOnGrid": {
+				"x": 1.0,
+				"y": 5.0
+			},
+			"GridCellPositions": [{
+					"x": 1.0,
+					"y": 5.0
+				}, {
+					"x": 1.0,
+					"y": 4.0
+				}
+			],
+			"Rotation": -270.0
+		}
+	],
+	"LightBulbs": [{
+			"Params": {
+				"IsOn": false,
+				"Intensity": 0.0
+			},
+			"InSocket": false,
+			"State": 1,
+			"Type": 1,
+			"PositionOnGrid": {
+				"x": 4.0,
+				"y": 5.0
+			},
+			"GridCellPositions": [{
+					"x": 4.0,
+					"y": 5.0
+				}
+			],
+			"Rotation": 90.0
+		}
+	],
+	"Obstructions": [],
+	"Motors": [],
+	"Buzzers": [],
+	"Switches": [],
+	"WirePieces": []
+}

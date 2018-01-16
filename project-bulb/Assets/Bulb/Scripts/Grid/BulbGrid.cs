@@ -312,7 +312,7 @@ namespace Bulb.Visuals.Grid
                                     {
                                         if (wireController.PreviousSelectedWirePiece != null)
                                         {
-                                            if (wireController.PreviousSelectedWirePiece.WireType != WirePiece.VisualType.End && GameState.CurrentState == GameStates.Game)
+                                            if ((wireController.PreviousSelectedWirePiece.WireType != WirePiece.VisualType.End && wireController.PreviousSelectedWirePiece.WireType != WirePiece.VisualType.NoConnections) && GameState.CurrentState == GameStates.Game)
                                             {
                                                 var currLevel = ApplicationController.Instance.LevelController.CurrentLevel;
                                                 if (!currLevel.CanBranch)

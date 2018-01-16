@@ -16,8 +16,8 @@
   </SettingsPasscode>
   <ForceResolution>
     <Value>
-      <x>600</x>
-      <y>800</y>
+      <x>0</x>
+      <y>0</y>
     </Value>
   </ForceResolution>
   <ShowCurrent>

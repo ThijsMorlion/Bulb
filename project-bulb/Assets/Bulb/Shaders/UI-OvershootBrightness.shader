@@ -16,6 +16,7 @@ Shader "Shader Forge/UI-OvershootBrightness" {
         _StencilOp ("Stencil Operation", Float) = 0
         _StencilOpFail ("Stencil Fail Operation", Float) = 0
         _StencilOpZFail ("Stencil Z-Fail Operation", Float) = 0
+        _ColorMask ("Color Mask", Float) = 15
     }
     SubShader {
         Tags {

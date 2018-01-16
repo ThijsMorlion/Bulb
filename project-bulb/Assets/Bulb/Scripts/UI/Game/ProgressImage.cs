@@ -9,7 +9,7 @@ namespace Assets.Bulb.Scripts.UI.Game
     {
         public int LevelIndex;
 
-        [Range(0,1)]
+        [Range(0, 1)]
         public float AlphaMultiplier;
         private float _previousAlphaMultiplier = 0f;
 
@@ -28,13 +28,14 @@ namespace Assets.Bulb.Scripts.UI.Game
             gameObject.SetActive(isActive);
 
             var animator = GetComponent<Animator>();
-            if (animator)
+            if (animator && isActive)
             {
-                if (isActive && playerLevel > LevelIndex - 1)
+                if (playerLevel > LevelIndex - 1)
                     animator.SetBool("instantSwitchingOn", true);
                 else
-                    animator.SetBool("switchingOn", true); 
+                    animator.SetBool("switchingOn", true);
             }
+
         }
 
         private void Update()

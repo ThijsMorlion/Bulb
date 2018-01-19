@@ -39,9 +39,12 @@ namespace Bulb.UI.MainMenu
 
         private void Start()
         {
-            var currChapter = ApplicationController.Instance.ChapterController.CurrentChapterIndex;
-            GetComponent<Button>().interactable = PlayerPrefs.GetInt(PlayerState.ChapterPlayerPrefsKey, 0) > currChapter ||
-                                                  PlayerPrefs.GetInt(PlayerState.ChapterPlayerPrefsKey, 0) == currChapter && PlayerPrefs.GetInt(PlayerState.LevelPlayerPrefsKey, 0) >= LevelIndex - 1;
+            if (Debug.isDebugBuild == false)
+            {
+                var currChapter = ApplicationController.Instance.ChapterController.CurrentChapterIndex;
+                GetComponent<Button>().interactable = PlayerPrefs.GetInt(PlayerState.ChapterPlayerPrefsKey, 0) > currChapter ||
+                                                      PlayerPrefs.GetInt(PlayerState.ChapterPlayerPrefsKey, 0) == currChapter && PlayerPrefs.GetInt(PlayerState.LevelPlayerPrefsKey, 0) >= LevelIndex - 1;
+            }
         }
 
         private void OnButtonClicked()

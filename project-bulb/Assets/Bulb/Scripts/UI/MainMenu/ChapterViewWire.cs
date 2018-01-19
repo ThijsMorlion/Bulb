@@ -26,8 +26,13 @@ namespace Bulb.UI.MainMenu
         private void Start()
         {
             var currChapter = ApplicationController.Instance.ChapterController.CurrentChapterIndex;
-            var isActive = PlayerPrefs.GetInt(PlayerState.ChapterPlayerPrefsKey, 0) > currChapter ||
-                                 PlayerPrefs.GetInt(PlayerState.ChapterPlayerPrefsKey, 0) == currChapter && PlayerPrefs.GetInt(PlayerState.LevelPlayerPrefsKey, 0) >= LevelIndex - 1;
+            var isActive = true;
+
+            if (Debug.isDebugBuild == false)
+            {
+                isActive = PlayerPrefs.GetInt(PlayerState.ChapterPlayerPrefsKey, 0) > currChapter ||
+                           PlayerPrefs.GetInt(PlayerState.ChapterPlayerPrefsKey, 0) == currChapter && PlayerPrefs.GetInt(PlayerState.LevelPlayerPrefsKey, 0) >= LevelIndex - 1;
+            }
 
             _lineRenderer.material = isActive ? ActiveMaterial : DefaultMaterial;
             _lineRenderer.widthMultiplier = isActive ? ActiveWidth : DefaultWidth;

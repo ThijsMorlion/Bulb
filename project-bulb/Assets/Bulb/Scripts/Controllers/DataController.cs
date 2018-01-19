@@ -12,7 +12,7 @@ namespace Bulb.Controllers
 {
     public class DataController : MonoBehaviour
     {
-        private static int _currentLevelDataVersionNumber = 4;
+        private static int _currentLevelDataVersionNumber = 5;
 
         public delegate void LevelSaved(string levelName);
         public static event LevelSaved OnLevelSaved;

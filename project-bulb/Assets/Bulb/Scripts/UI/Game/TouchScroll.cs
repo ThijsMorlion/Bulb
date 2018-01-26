@@ -150,10 +150,17 @@ namespace Bulb.UI
             //base.LateUpdate();
         }
 
+        public IEnumerator SetAnchoredPosition(Vector2 pos)
+        {
+            yield return new WaitForEndOfFrame();
+
+            SetAnchoredPosition2D(pos);
+        }
+
         public void SetAnchoredPosition2D(Vector2 pos)
         {
             var contentHeight = content.offsetMax.y;
-            pos.y = Mathf.Clamp(pos.y, 0, contentHeight);
+            pos.y = Mathf.Clamp(pos.y, 0, 4096);
 
             SetContentAnchoredPosition(pos);
         }

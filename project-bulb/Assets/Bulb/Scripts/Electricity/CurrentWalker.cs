@@ -1103,11 +1103,11 @@ namespace Bulb.Electricity
                     if (node.WirePiece.Connections.Count - 1 != node.GetConnectionCount())
                         return false;
                 }
-                else
-                {
-                    if (node.WirePiece.Connections.Count != node.GetConnectionCount())
-                        return false;
-                }
+                //else
+                //{
+                //    if (node.WirePiece.Connections.Count != node.GetConnectionCount())
+                //        return false;
+                //}
             }
 
             return true;

@@ -1,5 +1,6 @@
 ﻿using Bulb.Controllers;
 using Bulb.Game;
+using Bulb.UI.Game.Popups;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,6 +28,8 @@ namespace Bulb.UI.MainMenu
 
         private void OnEnable()
         {
+            SettingsPopup.Instance.OnAllLevelsReset += DoLevelCheck;
+            SettingsPopup.Instance.OnAllLevelsUnlocked += DoLevelCheck;
             GetComponent<Button>().onClick.AddListener(OnButtonClicked);
 
             LevelIndex = int.Parse(name);
@@ -34,23 +37,33 @@ namespace Bulb.UI.MainMenu
 
         private void OnDisable()
         {
+            SettingsPopup.Instance.OnAllLevelsReset -= DoLevelCheck;
+            SettingsPopup.Instance.OnAllLevelsUnlocked -= DoLevelCheck;
             GetComponent<Button>().onClick.RemoveListener(OnButtonClicked);
         }
 
         private void Start()
         {
-            if (Debug.isDebugBuild == false)
-            {
-                var currChapter = ApplicationController.Instance.ChapterController.CurrentChapterIndex;
-                GetComponent<Button>().interactable = PlayerPrefs.GetInt(PlayerState.ChapterPlayerPrefsKey, 0) > currChapter ||
-                                                      PlayerPrefs.GetInt(PlayerState.ChapterPlayerPrefsKey, 0) == currChapter && PlayerPrefs.GetInt(PlayerState.LevelPlayerPrefsKey, 0) >= LevelIndex - 1;
-            }
+            DoLevelCheck();
         }
 
         private void OnButtonClicked()
         {
             var levelController = ApplicationController.Instance.LevelController;
             levelController.LoadLevelInGame(LevelIndex - 1);
+        }
+
+        private void DoLevelCheck()
+        {
+            if (SettingsPopup.AllLevelsUnlocked)
+            {
+                GetComponent<Button>().interactable = true;
+                return;
+            }
+
+            var currChapter = ApplicationController.Instance.ChapterController.CurrentChapterIndex;
+            GetComponent<Button>().interactable = PlayerPrefs.GetInt(PlayerState.ChapterPlayerPrefsKey, 0) > currChapter ||
+                                                  PlayerPrefs.GetInt(PlayerState.ChapterPlayerPrefsKey, 0) == currChapter && PlayerPrefs.GetInt(PlayerState.LevelPlayerPrefsKey, 0) >= LevelIndex - 1;
         }
     }
 }

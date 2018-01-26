@@ -211,7 +211,10 @@ namespace Bulb.Visuals.Grid
                                                 wireController.PreviousSelectedWirePiece = wirePiece;
 
                                                 if (GameState.CurrentState == GameStates.Game && (!currLevel.CanBranch && (wirePiece.WireType != WirePiece.VisualType.End && wirePiece.WireType != WirePiece.VisualType.NoConnections)))
+                                                {
+                                                    transformGesture.Cancel();
                                                     return;
+                                                }
                                             }
                                             else
                                             {
@@ -343,7 +346,8 @@ namespace Bulb.Visuals.Grid
                                                 else
                                                 {
                                                     var currLevel = ApplicationController.Instance.LevelController.CurrentLevel;
-                                                    if (!currLevel.CanSnap && ((wirePiece.WireType != WirePiece.VisualType.End && wirePiece.WireType != WirePiece.VisualType.NoConnections) && 
+                                                    Debug.Log("Can Snap: " + currLevel.CanSnap);
+                                                    if (!currLevel.CanSnap && ((wirePiece.WireType != WirePiece.VisualType.End && wirePiece.WireType != WirePiece.VisualType.NoConnections) &&
                                                                                (previousWirePiece.WireType != WirePiece.VisualType.End && previousWirePiece.WireType != WirePiece.VisualType.NoConnections)))
                                                     {
                                                         return;

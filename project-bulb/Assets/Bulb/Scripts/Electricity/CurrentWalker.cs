@@ -35,6 +35,9 @@ namespace Bulb.Electricity
         public delegate void ParallelGroupsAnalyzed();
         public static event ParallelGroupsAnalyzed OnParallelGroupsAnalyzed;
 
+        public delegate void SimulatingStateChanged(bool isSimulating);
+        public static event SimulatingStateChanged OnSimulatingStateChanged;
+
         private delegate void NodesEvaluated();
         private event NodesEvaluated OnNodesEvaluated;
 
@@ -1268,6 +1271,9 @@ namespace Bulb.Electricity
                 ApplicationController.Instance.WireController.ResetAllWirePieces();
                 ApplicationController.Instance.CharacterController.ResetAllCharacters();
             }
+
+            if (OnSimulatingStateChanged != null)
+                OnSimulatingStateChanged(value);
         }
 
         private void ShowWireDirection_PropertyChanged(object sender, SettingChangedEventArgs<bool> e)

@@ -80,13 +80,14 @@ namespace Bulb.Core
                 else
                 {
                     WarningPopup.Instance.PopupMessage(WarningPopup.Type.Warning, "Je hebt een kortsluiting gemaakt!");
+                    WarningPopup.Instance.OnPopupClosed += WarningPopup_OnPopupClosedForReset;
                 }
             }
         }
 
         private IEnumerator ShowSuccessMessage()
         {
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(0f);
 
             WarningPopup.Instance.OnPopupClosed += WarningPopup_OnPopupClosed;
             WarningPopup.Instance.PopupMessage(WarningPopup.Type.Info, "Goed gedaan!");
@@ -110,6 +111,15 @@ namespace Bulb.Core
 
                 ApplicationController.Instance.LevelController.GoToChapterMain(); 
             }
+        }
+
+        private void WarningPopup_OnPopupClosedForReset()
+        {
+            ApplicationController.Instance.WireController.ResetAllWirePieces();
+            ApplicationController.Instance.CharacterController.ResetAllCharacters();
+            ApplicationController.Instance.CurrentWalker.SetIsSimulating(false);
+            WarningPopup.Instance.OnPopupClosed -= WarningPopup_OnPopupClosedForReset;
+
         }
     }
 }

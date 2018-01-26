@@ -21,20 +21,18 @@ namespace Bulb.UI.Game
 
             var currentWalker = ApplicationController.Instance.CurrentWalker;
             currentWalker.SetIsSimulating(false);
-
-            CurrentWalker.OnSimulationFailed += CurrentWalker_OnSimulationFailed;
+            
+            CurrentWalker.OnSimulatingStateChanged += CurrentWalker_OnSimulatingStateChanged;
         }
 
         private void OnDisable()
         {
-            CurrentWalker.OnSimulationFailed -= CurrentWalker_OnSimulationFailed;
+            CurrentWalker.OnSimulatingStateChanged -= CurrentWalker_OnSimulatingStateChanged;
         }
 
-        private void CurrentWalker_OnSimulationFailed(ErrorCode code)
+        private void CurrentWalker_OnSimulatingStateChanged(bool value)
         {
-            var currentWalker = ApplicationController.Instance.CurrentWalker;
-            currentWalker.SetIsSimulating(false);
-            Icon.sprite = PlayImage;
+            Icon.sprite = value ? StopImage : PlayImage;
         }
 
         private void ToggleSimulation()

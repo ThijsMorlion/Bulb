@@ -10,7 +10,7 @@ namespace Bulb.UI.MainMenu
         public void Start()
         {
             var currLevel = PlayerPrefs.GetInt(PlayerState.LevelPlayerPrefsKey, 0);
-            var childButton = LevelButtonsContainer.GetChild((LevelButtonsContainer.childCount - 1) - currLevel);
+            var childButton = LevelButtonsContainer.GetChild(LevelButtonsContainer.childCount - currLevel);
             var childPos = childButton.GetComponent<RectTransform>().anchoredPosition.y;
 
             var chapterViewPos = Mathf.Abs(childPos) - GetComponentInParent<RectTransform>().rect.height / 2;

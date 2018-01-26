@@ -109,7 +109,10 @@ namespace Bulb.Core
 
                 PlayerState.UnlockNextLevel();
 
-                ApplicationController.Instance.LevelController.GoToChapterMain(); 
+                if (ApplicationController.Instance.LevelController.WorldViewAnimationIndices.Contains(ApplicationController.Instance.LevelController.CurrentLevelIndex + 1))
+                    ApplicationController.Instance.LevelController.GoToChapterMain();
+                else
+                    ApplicationController.Instance.LevelController.LoadNextLevel();
             }
         }
 

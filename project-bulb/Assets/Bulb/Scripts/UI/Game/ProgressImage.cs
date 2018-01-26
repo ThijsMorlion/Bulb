@@ -16,6 +16,7 @@ namespace Assets.Bulb.Scripts.UI.Game
         private void Awake()
         {
             GetComponent<Image>().material.SetFloat("_AlphaMultiplier", 0f);
+            ApplicationController.Instance.LevelController.RegisterWorldViewAnimation(LevelIndex);
         }
 
         private void Start()
@@ -30,7 +31,7 @@ namespace Assets.Bulb.Scripts.UI.Game
             var animator = GetComponent<Animator>();
             if (animator && isActive)
             {
-                if (playerLevel > LevelIndex - 1)
+                if (playerLevel != LevelIndex)
                     animator.SetBool("instantSwitchingOn", true);
                 else
                     animator.SetBool("switchingOn", true);

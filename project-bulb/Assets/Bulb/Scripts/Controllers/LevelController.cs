@@ -8,7 +8,6 @@ using Bulb.Game;
 using Bulb.UI.Game.Popups;
 using Bulb.Visuals.Grid;
 using UnityEngine;
-using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 namespace Bulb.Controllers
@@ -20,6 +19,7 @@ namespace Bulb.Controllers
 
         public int CurrentLevelIndex { get; private set; }
         public Level CurrentLevel { get; private set; }
+        public HashSet<int> WorldViewAnimationIndices { get; private set; }
 
         private BulbGrid _grid;
 
@@ -27,6 +27,8 @@ namespace Bulb.Controllers
         {
             CreateNewLevel();
             CurrentLevelIndex = -1;
+
+            WorldViewAnimationIndices = new HashSet<int>();
         }
 
         private void OnEnable()
@@ -37,6 +39,11 @@ namespace Bulb.Controllers
         private void OnDisable()
         {
             SelectionController.OnObjectDeleted -= SelectionController_OnObjectDeleted;
+        }
+
+        public void RegisterWorldViewAnimation(int index)
+        {
+            WorldViewAnimationIndices.Add(index);
         }
 
         private void SelectionController_OnObjectDeleted(DrawableBase drawable)

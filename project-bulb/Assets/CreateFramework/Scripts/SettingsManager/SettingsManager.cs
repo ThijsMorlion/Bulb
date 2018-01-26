@@ -488,10 +488,12 @@ public class SettingsManager : MonoBehaviour
 
     private static void SetScreenResolution(Vector2 resolution)
     {
+#if UNITY_STANDALONE
         if (resolution.x > 0 && resolution.y > 0)
         {
             Screen.SetResolution((int)resolution.x, (int)resolution.y, Settings.Fullscreen.Value);
-        }
+        } 
+#endif
     }
 
     public static event PropertyChangedEventHandler PropertyChanged;

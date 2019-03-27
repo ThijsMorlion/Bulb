@@ -572,6 +572,16 @@ namespace Bulb.Visuals.Grid
                                 actionWidget.Drawable = drawable;
                                 actionWidget.TogglePopup(true);
                             }
+                            else
+                            {
+                                switch (drawable.Type)
+                                {
+                                    case DrawableBase.DrawableType.Switch:
+                                        var switchChar = (SwitchCharacter)drawable;
+                                        switchChar.ToggleSwitch();
+                                        break;
+                                }
+                            }
                         }
                     }
                 }

@@ -35,6 +35,36 @@ namespace Bulb.Controllers
             {
                 LoadLevel(levelName);
             };
+
+#if UNITY_ANDROID
+            AndroidStreamingAssets.Extract();
+            CopyAll(new DirectoryInfo(AndroidStreamingAssets.Path), new DirectoryInfo(Application.persistentDataPath));
+#else
+            CopyAll(new DirectoryInfo(Application.StreamingAssetsPath), new DirectoryInfo(Application.persistentDataPath));
+#endif
+        }
+
+        private void CopyAll(DirectoryInfo source, DirectoryInfo target)
+        {
+            // Copy each file into the new directory.
+            foreach (var file in source.GetFiles())
+            {
+                var targetFilename = Path.Combine(target.FullName, file.Name);
+                if (file.Extension.ToLower() == ".meta" || File.Exists(targetFilename))
+                    continue;
+
+                file.CopyTo(targetFilename, true);
+                Debug.Log("Copied file from streaming to persistent.");
+            }
+
+            // Copy each subdirectory using recursion.
+            foreach (DirectoryInfo diSourceSubDir in source.GetDirectories())
+            {
+                DirectoryInfo nextTargetSubDir =
+                    target.CreateSubdirectory(diSourceSubDir.Name);
+
+                CopyAll(diSourceSubDir, nextTargetSubDir);
+            }
         }
 
         public void SaveLevel(string levelName)
@@ -154,7 +184,11 @@ namespace Bulb.Controllers
 
         public LevelData GetLevelDataForIngameLevel(int currChapter, int currLevel)
         {
+#if !UNITY_ANDROID
             var saveFileDirectory = Application.streamingAssetsPath + string.Format("/GameLevels/Chapter{0}/", currChapter.ToString("00"));
+#else
+            var saveFileDirectory = AndroidStreamingAssets.Path + string.Format("/GameLevels/Chapter{0}/", currChapter.ToString("00"));
+#endif
             var files = Directory.GetFiles(saveFileDirectory, "*.bulb");
 
             try

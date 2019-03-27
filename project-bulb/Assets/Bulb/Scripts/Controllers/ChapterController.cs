@@ -17,7 +17,10 @@ namespace Bulb.Controllers
             {
                 if(_currentNumberOfLevels == 0)
                 {
-                    var saveFileDirectory = Application.streamingAssetsPath + string.Format("/GameLevels/Chapter{0}/", CurrentChapterIndex.ToString("00"));
+                    Debug.LogWarning("DataPath: " + Application.dataPath);
+                    Debug.LogWarning("Persistent DataPath: " + Application.persistentDataPath);
+
+                    var saveFileDirectory = Application.persistentDataPath + string.Format("/GameLevels/Chapter{0}/", CurrentChapterIndex.ToString("00"));
                     var files = Directory.GetFiles(saveFileDirectory, "*.bulb");
 
                     _currentNumberOfLevels = files.Length;

@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 675520451d4c9c7469264f0c666793b3
-timeCreated: 1516091287
-licenseType: Pro
 ShaderImporter:
   externalObjects: {}
   defaultTextures:
@@ -10,6 +8,7 @@ ShaderImporter:
   - _Quarter_copy: {fileID: 2800000, guid: 918ca9223a30c4b4cb26094903e9ce18, type: 3}
   - _Quarter_copy_copy: {fileID: 2800000, guid: f72b2db740cb81c449292ee7ff4b02c4,
       type: 3}
+  nonModifiableTextures: []
   userData: 
   assetBundleName: 
   assetBundleVariant: 

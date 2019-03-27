@@ -27,10 +27,10 @@
     <Value>false</Value>
   </ShowVoltage>
   <ShowWireDirection>
-    <Value>false</Value>
+    <Value>true</Value>
   </ShowWireDirection>
   <ShowCellOccupated>
-    <Value>false</Value>
+    <Value>true</Value>
   </ShowCellOccupated>
   <ShowCellCenter>
     <Value>false</Value>
@@ -39,6 +39,6 @@
     <Value>false</Value>
   </ShowDrawablePivot>
   <ShowDebugColors>
-    <Value>false</Value>
+    <Value>true</Value>
   </ShowDebugColors>
 </ExtendedManagerSettings>

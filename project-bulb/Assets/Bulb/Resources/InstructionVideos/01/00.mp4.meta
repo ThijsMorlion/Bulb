@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 9a43181f4ada7a8438ad3d965baee2a6
-timeCreated: 1513607546
-licenseType: Pro
 VideoClipImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -17,7 +15,25 @@ VideoClipImporter:
   flipVertical: 0
   flipHorizontal: 0
   importAudio: 1
-  targetSettings: {}
+  targetSettings:
+    0:
+      enableTranscoding: 0
+      codec: 0
+      resizeFormat: 0
+      aspectRatio: 0
+      customWidth: 1536
+      customHeight: 1536
+      bitrateMode: 2
+      spatialQuality: 2
+    7:
+      enableTranscoding: 1
+      codec: 1
+      resizeFormat: 2
+      aspectRatio: 0
+      customWidth: 1536
+      customHeight: 1536
+      bitrateMode: 2
+      spatialQuality: 2
   userData: 
   assetBundleName: 
   assetBundleVariant: 
